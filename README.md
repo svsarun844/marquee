@@ -1,4 +1,4 @@
-# marquee
+# Innovate News
 
 Innovate News Block for Moodle 3.0 (and beyond):
 
@@ -44,9 +44,10 @@ Support
 -------
 Support is offered in English  in these forum discussions:
 
-  English discussion: https://moodle.org/mod/forum/view.php?id=8259
+  English discussion: https://moodle.org/mod/forum/user.php?id=2469034
 
 Code repository: https://github.com/svsarun844/marquee
+
 Issues:https://github.com/svsarun844/marquee/issues
 
 Credits
