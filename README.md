@@ -44,10 +44,10 @@ Support
 -------
 Support is offered in English  in these forum discussions:
 
-  English discussion: 
+  English discussion: https://moodle.org/mod/forum/view.php?id=8259
 
-Code repository: 
-Issues:
+Code repository: https://github.com/svsarun844/marquee
+Issues:https://github.com/svsarun844/marquee/issues
 
 Credits
 -------
