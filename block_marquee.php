@@ -31,7 +31,8 @@ class block_marquee extends block_base {
     }
 
     function get_content() {
-        global $DB,$CFG;
+        global $DB,$CFG,$PAGE;
+	    $PAGE->requires->css( new moodle_url($CFG->wwwroot . '/blocks/marquee/styles.css'));
 		require_once($CFG->dirroot.'/config.php');
         if ($this->content !== null) {
             return $this->content;
@@ -45,35 +46,8 @@ class block_marquee extends block_base {
         $this->content = new stdClass();
         $this->content->items = array();
         $this->content->icons = array();
-        $this->content->footer = '';
-        $this->content->text .= '<style>
-        						ul.marquee_list,ul.marquee_list li {
-									margin: 0;
-									padding: 0;
-								}
-
-								ul.marquee_list {
-									counter-reset: foo;
-									display: table;
-								}
-
-								ul.marquee_list li {
-									list-style: none;
-								 
-									display: table-row;
-								}
-
-								ul.marquee_list li::before {
-									font-family: FontAwesome;
-									font-size: 10px;
-									content: "\f054";
-									display: table-cell;
-									text-align: right;
-									padding-right: .3em;
-								}
-								</style>';
-		if(is_siteadmin()) {
-	       //	$this->content->text .= '<a class="pull-right" href="'.$CFG->wwwroot.'/blocks/marquee/list.php"><strong>marquee</strong></a><br>';
+        $this->content->footer = '';        
+		if(is_siteadmin()) {	       
  $this->content->text .= '<br><p><a href="'.$CFG->wwwroot.'/blocks/marquee/list.php"><strong>Click here</strong></a> to manage Innovate News</p><br>';
 		}
 		
@@ -87,10 +61,8 @@ class block_marquee extends block_base {
 	if($i != count($marquee)) 
 	$variable .= "|";
 	$variable .= "&nbsp;&nbsp";
-	}
-
-	$this->content->text .= '<marquee  onmouseover="this.stop();" onmouseout="this.start();" direction="left" scrolldelay="4" scrollamount="2" behavior="scroll">"<b>'.$variable.'</b>"</marquee>';	
-		
+	}	
+	$this->content->text .= '<p class="microsoft marquee"><b>'.$variable.'</b></p>';	
        
         return $this->content;
     }
